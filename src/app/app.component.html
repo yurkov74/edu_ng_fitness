@@ -9,11 +9,13 @@
           <mat-icon>menu</mat-icon>
         </button>
       </div>
-      <div>LOGO</div>
-      <div fxFlexAlign="end center">
-        <a mat-stroked-button routerLink="/signup">Signup</a>
-        <a mat-stroked-button routerLink="/login">Login</a>
-        <a mat-stroked-button routerLink="/training">Training</a>
+      <div><a routerLink="/">LOGO</a></div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="10px" class="nav-items">
+          <li><a routerLink="/signup">Signup</a></li>
+          <li><a routerLink="/login">Login</a></li>
+          <li><a routerLink="/training">Training</a></li>
+        </ul>
       </div>
     </mat-toolbar>
 
