@@ -8,6 +8,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
     exports: [
@@ -18,7 +19,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
         MatIconModule,
         MatInputModule,
         MatNativeDateModule,
-        MatSidenavModule
+        MatSidenavModule,
+        MatToolbarModule,
     ]
 })
 export class MaterialModule {}

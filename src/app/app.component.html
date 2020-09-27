@@ -3,7 +3,22 @@
     <p>sidenav</p>
   </mat-sidenav>
   <mat-sidenav-content>
-    <button (click)="sidenav.toggle()">Show sidenav</button>
-    <router-outlet></router-outlet>
+    <mat-toolbar color="primary">
+      <div>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>LOGO</div>
+      <div fxFlexAlign="end center">
+        <a mat-stroked-button routerLink="/signup">Signup</a>
+        <a mat-stroked-button routerLink="/login">Login</a>
+        <a mat-stroked-button routerLink="/training">Training</a>
+      </div>
+    </mat-toolbar>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
