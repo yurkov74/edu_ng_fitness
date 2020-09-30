@@ -17,7 +17,9 @@ export class CurrentTrainingComponent implements OnInit {
     private dialog: MatDialog
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { this.startOrResumeTimer(); }
+
+  startOrResumeTimer() {
     this.timer = setInterval(() => {
       this.progress++;
       if (this.progress >= 100 ) clearInterval(this.timer); 
@@ -26,7 +28,16 @@ export class CurrentTrainingComponent implements OnInit {
 
   onStop() {
     clearInterval(this.timer);
-    this.dialog.open(StopTrainingComponent);
+    const data = {
+      progress: this.progress,
+      training: 'exercise'
+    };
+    const dialogRef = this.dialog.open(StopTrainingComponent, { data: data });
+
+    dialogRef.afterClosed().subscribe(res => {
+      if(res) this.trainingStop.emit();
+      this.startOrResumeTimer();
+    });
   }
 
 }
