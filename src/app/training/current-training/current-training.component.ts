@@ -8,16 +8,17 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class CurrentTrainingComponent implements OnInit {
   @Output() trainingStop = new EventEmitter<void>();
   progress = 0;
+  timer;
 
   constructor() { }
 
   ngOnInit(): void {
-    setInterval(() => {
+    this.timer = setInterval(() => {
       this.progress++;
-      if (this.progress === 100 ) this.onStop(); 
+      if (this.progress >= 100 ) clearInterval(this.timer); 
     }, 200);
   }
 
-  onStop() { this.trainingStop.emit(); }
+  onStop() { clearInterval(this.timer); }
 
 }
