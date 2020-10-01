@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//app modules
+// app modules
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './core/modules/material.module';
+// app services
+import { AuthService } from './auth/auth.service';
 // app components
 import { AppComponent } from './app.component';
 import { CurrentTrainingComponent } from './training/current-training/current-training.component';
@@ -41,7 +43,7 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
     FormsModule, ReactiveFormsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   entryComponents: [StopTrainingComponent]
 })
